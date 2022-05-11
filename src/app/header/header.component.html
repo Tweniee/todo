@@ -1,0 +1,14 @@
+<ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="!isnav && !isLogout()" [routerLink]="['/register']" (click)="redirect()">Register</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="isnav && !isLogout()" [routerLink]="['/login']"(click)="redirect()">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="isLogout()" [routerLink]="['/login']" (click)="logout()">Logout</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" *ngIf="isLogout()">Login User: <b>{{userName()}}</b></a>
+    </li>
+  </ul>

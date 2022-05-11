@@ -1,0 +1,15 @@
+<div class="container ">
+    <form #userLogin="ngForm"   >
+        <span class="alert-danger" *ngIf=" isSubmit && userLogin.invalid">Please Verify Credentials Again</span>
+        <span class="alert-danger" *ngIf="userLogin.valid &&  isSubmit && error_message!=''">{{error_message}}</span>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="email" required class="form-control" [(ngModel)]="userName" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" required class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary m" (click)="onSubmit(userName,password)">Submit</button>
+    </form>
+</div>
